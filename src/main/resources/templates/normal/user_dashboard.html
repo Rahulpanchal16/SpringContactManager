@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="/normal/user_base::layout(~{::section})"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="#" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <section>
+      <h2>Welcome to your private dashboard</h2>
+      <h2>Welcome : <span th:text="${user.name}"></span></h2>
+      <div class="toast-container position-fixed fixed-bottom bottom-0 end-0 p-3">
+        <form>
+          <script
+            src="https://checkout.razorpay.com/v1/payment-button.js"
+            data-payment_button_id="pl_MXKjtTICMz7B7z"
+            async
+          ></script>
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

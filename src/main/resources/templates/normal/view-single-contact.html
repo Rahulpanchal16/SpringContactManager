@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="/normal/user_base::layout(~{::section})"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="#" th:href="@{/css/style.css}" />
+  </head>
+  <body>
+    <section>
+      <div class="card">
+        <div class="card-body" style="display: flex">
+          <div class="container" style="display: flex; flex: 25">
+            <img
+              th:src="@{'/img/'+${contact.conImgUrl}}"
+              alt=""
+              style="width: 200px; height: 200px"
+              class="rounded-circle"
+            />
+          </div>
+          <div class="container" style="display: flex; flex: 75">
+            <div class="d-block">
+              <h1 th:text="${contact.conName}" class="font-weight-bold"></h1>
+              <p th:text="${contact.conDescription}"></p>
+              <h6>
+                Email:
+                <a th:href="'mailto: '+${contact.conEmail}"
+                  ><span th:text="${contact.conEmail}"></span
+                ></a>
+              </h6>
+              <h6>
+                Contact no:
+                <a th:href="'tel:'+${contact.conPhone}"
+                  ><span th:text="${contact.conPhone}"></span
+                ></a>
+              </h6>
+            </div>
+          </div>
+          <div>
+            <button class="btn-block" type="submit">
+              Save
+              <div class="arrow-wrapper"></div>
+            </button>
+          </div>
+          <div>
+            <button type="submit" class="btn-block">
+              Delete
+              <div class="arrow-wrapper"></div>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+SA+Beginner&family=Poppins:wght@300&family=Raleway:wght@300&display=swap");
+body {
+  background-color: #f4faff !important;
+  font-family: "Edu SA Beginner", cursive;
+  font-family: "Poppins", sans-serif;
+  font-family: "Raleway", sans-serif;
+}
+
+.bg-main {
+  background-color: #131515;
+}
+
+.banner {
+  width: 100%;
+  height: 92.9vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/banner.jpg");
+  background-size: cover;
+  color: white;
+}
+
+button {
+  --primary-color: #645bff;
+  --secondary-color: #fff;
+  --hover-color: #111;
+  --arrow-width: 10px;
+  --arrow-stroke: 2px;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 20px;
+  color: var(--secondary-color);
+  padding: 1em 1.8em;
+  background: var(--primary-color);
+  display: flex;
+  transition: 0.2s background;
+  align-items: center;
+  gap: 0.6em;
+  font-weight: bold;
+}
+
+button .arrow-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button .arrow {
+  margin-top: 1px;
+  width: var(--arrow-width);
+  background: var(--primary-color);
+  height: var(--arrow-stroke);
+  position: relative;
+  transition: 0.2s;
+}
+
+button .arrow::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  border: solid var(--secondary-color);
+  border-width: 0 var(--arrow-stroke) var(--arrow-stroke) 0;
+  display: inline-block;
+  top: -3px;
+  right: 3px;
+  transition: 0.2s;
+  padding: 3px;
+  transform: rotate(-45deg);
+}
+
+button:hover {
+  background-color: var(--hover-color);
+}
+
+button:hover .arrow {
+  background: var(--secondary-color);
+}
+
+button:hover .arrow:before {
+  right: 0;
+}
+
+#anchorr {
+  text-decoration: none;
+}
+
+.my-card {
+  padding: 20px;
+  margin: 50px;
+  background-color: white;
+}
+
+#my-card-body {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+/* side bar styles */
+
+.sidebar {
+  width: 20%;
+  background: white;
+  height: 100%;
+  position: fixed;
+  padding-top: 20px;
+}
+
+.sidebar a {
+  display: block;
+  width: 100%;
+  padding: 25px 25px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.sidebar a:hover {
+  background-color: #f4faff;
+}
+.sidebar .items span {
+  margin-left: 5px;
+}
+
+.content {
+  width: 70%;
+  margin-left: 23%;
+  margin-top: 5%;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 80%;
+  }
+
+  .sidebar {
+    width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sidebar a:hover {
+    background-color: #f4faff;
+  }
+
+  .sidebar .items i {
+    display: inline; /* Display the icons */
+  }
+
+  .sidebar .items {
+    padding: 10px 10px; /* Add some spacing to the left of the icons */
+    text-align: center;
+  }
+
+  .sidebar .items span {
+    display: none; /* Hide the text for mobile screens */
+  }
+}
+
+/* search box css */
+.search-container {
+  position: relative;
+}
+
+.search-result {
+  position: absolute;
+  background: white;
+}

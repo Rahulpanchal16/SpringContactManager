@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html
+  lang="en"
+  xmlns:th="http://www.thymeleaf.org"
+  th:replace="base :: layout(~{::section})"
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <section>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 offset-md-3">
+            <div class="my-card" id="my-card-body">
+              <h6>
+                Please enter the one time password <br />
+                to verify your account
+              </h6>
+              <div>
+                <span>A code has been sent to</span>
+                <small th:text="${session.email}"></small>
+              </div>
+              <form action="" th:action="@{/otp-processing}" method="post">
+                <div class="form-group">
+                  <input
+                    class="form-control"
+                    type="number"
+                    id="first"
+                    name="formotp"
+                    required
+                  />
+                </div>
+                <input class="d-none" th:value="${email}" />
+                <button type="submit">
+                  Validate
+                  <div class="arrow-wrapper">
+                    <div class="arrow"></div>
+                  </div>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
